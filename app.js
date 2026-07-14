@@ -37,6 +37,11 @@ app.get("/test", (req,res) => {
     res.send("Hello")
 })
 
+app.post("/add-team",async (req,res) => {
+    await TeamData.create(req.body)
+    res.json({status : "Success"})
+})
+
 app.listen(3000, () => {
     console.log("Server Started")
 })
